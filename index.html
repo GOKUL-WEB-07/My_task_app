@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY TASK</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#7c7cff">
+  <link rel="stylesheet" href="Style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main class="app">
+  <header class="header">
+    <h1>My Tasks</h1>
+  </header>
+
+  <!-- Search -->
+  <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+  <!-- Add Task -->
+  <section class="task-input">
+    <input type="text" id="taskInput" placeholder="Add a new task..." />
+
+    <select id="priorityInput">
+      <option value="low">Low</option>
+      <option value="medium" selected>Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <button id="addBtn">Add</button>
+  </section>
+
+  <!-- Counter -->
+  <div class="counter">
+    <span id="totalCount">0</span> Tasks |
+    <span id="completedCount">0</span> Completed
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="active">Active</button>
+    <button data-filter="completed">Completed</button>
+  </div>
+
+  <!-- Clear All -->
+<div class="clear-wrapper hidden" id="clearWrapper">
+  <span id="clearAllText">Clear all</span>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal-backdrop hidden" id="modalBackdrop">
+  <div class="modal">
+    <h3>Clear all tasks?</h3>
+    <p>
+      All tasks (Active & Completed) will be permanently deleted.
+      This action cannot be undone.
+    </p>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelClear">No</button>
+      <button class="btn-danger" id="confirmClear">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Task List -->
+  <ul id="taskList"></ul>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

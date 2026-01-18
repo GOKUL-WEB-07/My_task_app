@@ -1,11 +1,15 @@
-const CACHE_NAME = "todo-app-v1";
+const CACHE_NAME = "todo-app-v3";
+
 const ASSETS = [
-  "./",
-  "./index.html",
-  "./Style.css",
-  "./main.js",
-  "./manifest.json"
+  "/My_task_app/",
+  "/My_task_app/index.html",
+  "/My_task_app/style.css",
+  "/My_task_app/main.js",
+  "/My_task_app/manifest.json",
+  "/My_task_app/icons/icon-192.png",
+  "/My_task_app/icons/icon-512.png"
 ];
+
 
 self.addEventListener("install", event => {
   event.waitUntil(
